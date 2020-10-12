@@ -1,0 +1,10 @@
+docker create \
+  --name=nextcloud \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Europe/Budapest \
+  -p 443:443 \
+  -v /home/docker/nextcloud:/config \
+  -v /mnt/data1/nextcloud:/data \
+  --restart unless-stopped \
+  linuxserver/nextcloud
